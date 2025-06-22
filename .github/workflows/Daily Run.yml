@@ -1,27 +1,35 @@
-name: Daily Run of main.py
+name: Daily Update for tnRainfallData.csv
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Runs daily at 00:00 UTC
-  workflow_dispatch:     # Allows manual trigger from GitHub
+    - cron: '0 2 * * *'  # Every day at 00:00 UTC
+  workflow_dispatch:
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'  # Update if needed
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-    - name: Run Python script
-      run: python main.py
+      - name: Run script to append data
+        run: python main.py
+
+      - name: Commit and push updated CSV
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add tnRainfallData.csv
+          git commit -m "📈 Update tnRainfallData.csv on $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
