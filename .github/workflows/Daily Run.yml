@@ -27,9 +27,12 @@ jobs:
         run: python main.py
 
       - name: Commit and push updated CSV
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add tnRainfallData.csv
-          git commit -m "📈 Update tnRainfallData.csv on $(date +'%Y-%m-%d')" || echo "No changes to commit"
-          git push
+          git commit -m "📈 Auto-update on $(date +'%Y-%m-%d')" || echo "No changes"
+          git remote set-url origin https://x-access-token:${TOKEN}@github.com/${{ github.repository }}
+          git push origin HEAD:${{ github.ref_name }}
