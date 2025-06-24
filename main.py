@@ -111,7 +111,7 @@ if Da != None:
     Today_Rain_Fall = df1.join(C_Date)
     TN_Rain_Fall_History = current_Data.copy()
     TN_Rain_Fall_History.date = pd.to_datetime(TN_Rain_Fall_History.date, format = "%Y-%m-%d")
-    if TN_Rain_Fall_History.loc[len(TN_Rain_Fall_History)-1][4] != Today_Rain_Fall.loc[0][4] :
+    if TN_Rain_Fall_History.tail(1).date.values != Today_Rain_Fall.head(1).date.values :
         Total_Rain_Fall_Data = pd.concat([TN_Rain_Fall_History,Today_Rain_Fall])
         print("Data Added")
     else :
@@ -142,6 +142,7 @@ else:
     Total_Rain_Fall_Data.date = Total_Rain_Fall_Data.date.dt.strftime('%Y-%m-%d')
     Total_Rain_Fall_Data=Total_Rain_Fall_Data[['dept','dist','station','value','date']]
 Total_Rain_Fall_Data.drop_duplicates(inplace=True)
+Total_Rain_Fall_Data.dropna(inplace=True)
 Total_Rain_Fall_Data = Total_Rain_Fall_Data.sort_values(by='date')
 Total_Rain_Fall_Data = re_index(Total_Rain_Fall_Data)
 # Save the DataFrame to a CSV file

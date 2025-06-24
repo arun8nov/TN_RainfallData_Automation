@@ -180,6 +180,7 @@ driver.quit()
 re_index(Search_Rain_Fall_Data)
 final_df = pd.concat([history_df, Search_Rain_Fall_Data])
 final_df = final_df.drop_duplicates()
+final_df = final_df.dropna()
 final_df = final_df.sort_values(by='date')
 final_df = re_index(final_df)
 # Save the final DataFrame to a CSV file
