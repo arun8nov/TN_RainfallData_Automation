@@ -102,7 +102,7 @@ After you have populated `tnRainfallData.csv` using one of the methods above, yo
 
 ## 🖼️ Dashboard Screenshot
 
-![image](appsamole.png)
+![image](appsample.png)
 
 ## Author
 
