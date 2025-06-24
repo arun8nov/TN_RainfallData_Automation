@@ -2,3 +2,6 @@ pandas
 beautifulsoup4
 selenium
 requests
+seaborn
+matplotlib
+streamlit

@@ -2,7 +2,7 @@ name: Daily Rainfall Data Update
 
 on:
   schedule:
-    - cron: '0 2 * * *'   # Runs daily at 00:00 UTC
+    - cron: '0 2 * * *'   # Runs daily at 08:00 UTC
   workflow_dispatch:       # Manual trigger option
 
 jobs:
