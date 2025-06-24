@@ -95,9 +95,6 @@ if Da != None:
         if len(df1.columns) !=5 :
             df1 = df1.drop(columns= [len(df1.columns)-1])
     df1 = df1.drop(columns = [0])
-
-
-
     column_Name = ['dept', 'dist', 'station', 'value']
     df1.columns = column_Name
     df1.value = df1.value.astype(float)
