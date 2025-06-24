@@ -96,6 +96,10 @@ After you have populated `tnRainfallData.csv` using one of the methods above, yo
 
 3.  Your default web browser will open a new tab with the dashboard. You can now filter by district and date range to explore the rainfall data.
 
+## ETL Diagram
+
+![image](ETL.png)
+
 ## 🖼️ Dashboard Screenshot
 
 ![image](appsamole.png)
