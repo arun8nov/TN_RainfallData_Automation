@@ -27,7 +27,7 @@ Before you begin, ensure you have the following installed:
 1.  **Clone the repository (if it's on Git):**
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/arun8nov/TN_RainfallData_Automation
     cd TN_RainfallData_Automation
     ```
 
