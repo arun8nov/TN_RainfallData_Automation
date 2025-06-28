@@ -58,7 +58,7 @@ Before you begin, ensure you have the following installed:
 
 To run the automation script, execute the main Python file from your terminal. Make sure your virtual environment is activated first.
 ```bash
-python your_main_script_name.py  # <-- Replace with the actual name of your main script
+python main.py
 ```
 Follow these steps to run the project.
 
