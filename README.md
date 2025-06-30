@@ -104,7 +104,7 @@ After you have populated `tnRainfallData.csv` using one of the methods above, yo
 
 ![image](appsample.png)
 
-### Dashboard Link: https://arun8nov-tn-rainfalldata-automation-app-zbsxu0.streamlit.app/
+### Live Dashboard Link: https://arun8nov-tn-rainfalldata-automation-app-zbsxu0.streamlit.app/
 ## Author
 
 *   **Arunprakash B**
