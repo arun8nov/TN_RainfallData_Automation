@@ -27,7 +27,7 @@ Before you begin, ensure you have the following installed:
 1.  **Clone the repository (if it's on Git):**
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/arun8nov/TN_RainfallData_Automation
     cd TN_RainfallData_Automation
     ```
 
@@ -58,7 +58,7 @@ Before you begin, ensure you have the following installed:
 
 To run the automation script, execute the main Python file from your terminal. Make sure your virtual environment is activated first.
 ```bash
-python your_main_script_name.py  # <-- Replace with the actual name of your main script
+python main.py
 ```
 Follow these steps to run the project.
 
