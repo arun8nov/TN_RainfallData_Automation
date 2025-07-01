@@ -153,3 +153,15 @@ ax1.patch.set_alpha(1)
 sns.lineplot(data=filtered_df, x='date', y='value', ax=ax1)
 plt.xticks(rotation=45,)
 st.pyplot(fig1)
+
+df1 = pd.read_csv("raingauge_stations.csv")
+
+def show_station_map(df):
+    st.subheader("🌧️ Rain Gauge Station Locations")
+
+    map_data = df.copy()
+    map_data.rename(columns={'Latitude': 'lat', 'Longitude': 'lon'}, inplace=True)
+    
+    st.map(map_data)
+
+show_station_map(df1)
